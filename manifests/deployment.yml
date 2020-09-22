@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mahidulpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mahidulpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mahidulpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mahidulpipelinesjavascriptdocker 
+          image: akspractcontainerregistry.azurecr.io/mahidulpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
