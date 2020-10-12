@@ -49,7 +49,6 @@ stages:
   dependsOn: Build
 
   jobs:
-  - job: DeplouToDev
   - deployment: Deploy
     displayName: Deploy
     pool:
@@ -79,7 +78,7 @@ stages:
                 $(containerRegistry)/$(imageRepository):$(tag)
   
   - deployment: DeployToQA
-    dependsOn: DeplouToDev
+    dependsOn: Deploy
     displayName: Deploy To QA
     pool:
       vmImage: $(vmImageName)
