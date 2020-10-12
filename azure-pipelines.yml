@@ -79,7 +79,7 @@ stages:
                 $(containerRegistry)/$(imageRepository):$(tag)
   
   - deployment: DeployToQA
-    dependsOn: Deploy to Dev
+    dependsOn: DeplouToDev
     displayName: Deploy To QA
     pool:
       vmImage: $(vmImageName)
