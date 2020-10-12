@@ -78,7 +78,8 @@ stages:
                 $(containerRegistry)/$(imageRepository):$(tag)
   
   - deployment: DeployToQA
-    displayName: Deploy
+    dependsOn: Deploy to Dev
+    displayName: Deploy To QA
     pool:
       vmImage: $(vmImageName)
     environment: 'QA.akspractdeae'
